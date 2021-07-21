@@ -10,7 +10,7 @@ This part of the application is accessible only for the logged users. There is a
 There are two sqlite databases provided - each for every app. 
 The one related to stocks' prices was build by `database.py` python script using data from [link](https://stooq.pl/).
 
-Technologies: Python 3.8.3, Django, HTML5, Bootstrap 5.0, pandas.
+Technologies: Python 3.8.3, Django 3.2.5, HTML5, Bootstrap 5.0, pandas.
 
 In order to see this project you should run `python manage.py runserver` on your command line and open the browser at local host specified. 
 
