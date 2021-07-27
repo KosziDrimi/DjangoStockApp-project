@@ -8,20 +8,21 @@
   </head>
 
   <body>
-    {% if user.is_authenticated %}
 
     <div class="container">
       <a href = "{% url 'logout' %}" class="btn btn-success">Wyloguj</a><br>
       <br>
       <h4>Rezultat zapytania:</h4>
       <br>
-      {% if temp == 'kgh' %}
+
+      {% if name == 'kgh' %}
         <h6>Dane dla spółki - KGHM Polska Miedź S.A.</h6>
-      {% elif temp == 'pkn' %}
+      {% elif name == 'pkn' %}
         <h6>Dane dla spółki - Polski Koncern Naftowy Orlen S.A.</h6>
       {% else %}
         <h6>Dane dla spółki - Serinus Energy Inc.</h6>
       {% endif %}
+      <br>
 
       <table class='table' style="max-width: 20rem;">
         <tr>
@@ -29,27 +30,14 @@
           <th> Cena </th>
         </tr>
         {% for p in prices %}
-          {% if p.Cena_KGH %}
           <tr>
             <td>{{ p.Data }}</td>
-            <td>{{ p.Cena_KGH }}</td>
+            <td>{{ p.Cena }}</td>
           </tr>
-          {% elif p.Cena_PKN %}
-          <tr>
-            <td>{{ p.Data }}</td>
-            <td>{{ p.Cena_PKN }}</td>
-          </tr>
-          {% else %}
-          <tr>
-            <td>{{ p.Data }}</td>
-            <td>{{ p.Cena_SEN }}</td>
-          </tr>
-          {% endif %}
         {% endfor %}
       </table>
 
     </div>
-    {% endif %}
-    
+
   </body>
 </html>

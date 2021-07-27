@@ -8,16 +8,17 @@
   </head>
 
   <body>
-    
+
     <div class="container">
       {% if form.errors %}
-      <p>Należy wprowadzić poprawne dane.</p>
+      <h6>Należy wprowadzić poprawne dane.</h6>
       {% endif %}
 
       {% if next %}
-      <p>Strona dostępna po zalogowaniu.</p>
+      <h6>Strona dostępna po zalogowaniu.</h6>
       {% endif %}
 
+      <br>
       <h4>Prosimy o zalogowanie się:</h4>
       <br>
       <form action = "{% url 'login' %}" method = "POST">
@@ -27,7 +28,6 @@
         </table>
         <button type="submit" class="btn btn-success">Zaloguj</button>
         <input type="hidden" name="next" value="{{ next }}">
-
       </form>
 
     </div>

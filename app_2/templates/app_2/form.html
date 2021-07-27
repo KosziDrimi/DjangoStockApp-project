@@ -9,12 +9,12 @@
 
   <body>
 
-    {% if user.is_authenticated %}
     <div class="container">
       <a href = "{% url 'logout' %}" class="btn btn-success">Wyloguj</a><br>
       <br>
       <h4>Prosimy o wypełnienie formularza:</h4>
       <br>
+
       <form action = "{% url 'show' %}" method = "POST">
         {% csrf_token %}
         <table class='table' style="max-width: 30rem;">
@@ -22,16 +22,8 @@
         </table>
         <button type="submit" class="btn btn-success">Generuj</button>
       </form>
+
     </div>
-    
-    {% else %}
-    <div class="container">
-      <h4>Strona dostępna po zalogowaniu.</h4>
-      <br>
-      <a href = "{% url 'login' %}" class="btn btn-success">Zaloguj</a>
-    </div>
-    {% endif %}
 
   </body>
-
 </html>
