@@ -88,6 +88,7 @@ DATABASES = {
     }
 }
 
+DATABASE_ROUTERS = ['myproject.routers.Router']
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -132,5 +133,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_URL = '/app_1/accounts/login/'
 LOGIN_REDIRECT_URL = '/app_2/show'
 LOGOUT_REDIRECT_URL = '/app_1/accounts/login'
