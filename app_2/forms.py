@@ -6,6 +6,7 @@ class DateInput(forms.DateInput):
     
     
 class PriceForm(forms.Form):
-    nazwa_spółki = forms.ChoiceField(choices=[('kgh', 'KGH'), ('pkn', 'PKN'), ('sen', 'SEN')])
+    nazwa_spółki = forms.ChoiceField(choices=[('kgh', 'KGH'), ('pkn', 'PKN'), 
+                                              ('sen', 'SEN')])
     data_początkowa = forms.DateField(widget = DateInput())
     data_końcowa = forms.DateField(widget = DateInput())
